@@ -1,18 +1,18 @@
-FileName = raw_input("Type a File Name to save as")
-Words = raw_input("type a couple of Sentence's(use only a-z 0-9 . ,  ' ! ? " )
+FileName = raw_input("Type a File Name to save as: ")
+Words = raw_input("type a couple of Sentence's(use only a-z)")
 Words = Words.lower()#makes it lowercase (Only lowercase will be encrypted)
-File1 = open("Txt's\N!tro.txt","w")
+File1 = open("Temp\N!tro.txt","w")
 File1.write(Words)#takes the input from the user and puts it in the txt file
 File1.close()
-File2 = open("Txt's\N!tro.txt","r")
+File2 = open("Temp\N!tro.txt","r")
 File = File2.read() #Reads the file into a string
 EncList = []
-Alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',' ','.',',','"',"'",'!','?','1','2','3','4','5','6','7','8','9','0']
-EncAlphabet = ['*','/',',','-','%','r','<','!','+','$','1','^','0','=','&','I','`','X','.','9','4','q','_','p','o','"',' ']
-for counter in range(0,len(File)):     #Take's the txt file and make's it a list
+Alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',' ']
+EncAlphabet = ['*','/','z','-','%','r','<','!','+','$','9','^','i','=','&',',','`','x','.','u','8','p','2','4','w','"',' ']
+for counter in range(0,len(File)):     #Take's the String and make's it a list
  EncList.append(File[counter])
 counter = 0
-for counter in range(0,len(File)):     #Encrypt's the file
+for counter in range(0,len(File)):     #Encrypt's the List
  if EncList[counter] == Alphabet[0] :
   EncList[counter] = EncAlphabet[0]
  elif EncList[counter] == Alphabet[1] :
@@ -71,7 +71,7 @@ counter = 0
 
 Encstring = "".join(EncList) #Makes a string out of the list
 print ("").join(EncList)
-File10 = open("Encrypted_Files\$" + FileName + ".D@a" , "w") #Saves it to a .D@a (Txt) File With a custom name 
+File10 = open("Encrypted_Files/" + FileName + ".D@a" , "w") #Saves it to a .D@a (Txt) File With a custom name 
 File10.write(Encstring)
 File10.close()
 File2.close()
